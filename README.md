@@ -1,4 +1,5 @@
 ### CS572-Homework-08-LLM
+Note: You may use [readline-sync](https://www.npmjs.com/package/readline-sync) to read input from the console.
 
 #### Question 01
 Create a function and use OpenAI API to convert a US address to specific parts as follows:
