@@ -11,6 +11,7 @@ import readline from "node:readline/promises";
 
 const readline_interface = readline.createInterface({ input: process.stdin, output: process.stdout });
 const user_answer = await readline_interface.question('What is your name?');
+if (user_answer === 'exit') process.exit(0);
 ```
 Alternatively, you may use [readline-sync](https://www.npmjs.com/package/readline-sync).
 
