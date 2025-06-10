@@ -1,22 +1,14 @@
 ### CS572-Homework-08-LLM
-
+*Note: For all questions, UI is not required, test your code implementation from the CLI.*
 #### Question 01
-Create a function and use OpenAI API to convert a US address to specific parts as follows:
+Create a function and use the OpenAI API to convert a US address to a JSON object:
 * Input: `1000 N 4th Street, Fairfield, IA 52556`
 * Output: `{ "street": "1000 N 4th Street", "City": "Fairfield", "State": "IA", "Zipcode": "52556" }`
 
-Note: You may use `readline` core module to read input from the console:
-```typescript
-import readline from "node:readline/promises";
-
-const readline_interface = readline.createInterface({ input: process.stdin, output: process.stdout });
-const user_answer = await readline_interface.question('What is your name?');
-if (user_answer === 'exit') process.exit(0);
-```
-Alternatively, you may use [readline-sync](https://www.npmjs.com/package/readline-sync).
+Note: You may install and use the [prompts](https://www.npmjs.com/package/prompts) package to read an input from the console.
 
 #### Question 02
-Create API REST endpoints and use OpenAI API to implement the following:
+Create 5 RESTful API endpoints and use OpenAI API to implement the following:
 * Proofread any text
 * Make text Friendly
 * Make text Professional
@@ -24,7 +16,7 @@ Create API REST endpoints and use OpenAI API to implement the following:
 * Extract Key points
 
 #### Question 03
-Use OpenAI API and [OpenWeatherMap API](https://openweathermap.org/api) to return the current weather status for the user at any given location.
+Create an AI Agent that will assist students retrieve their final courses grade and GPA.
   
-Note: UI is optional (not required), but if you wish to implement, make sure you create a transitional waiting state until your backend server (and LLM) sends back the full response.
+
   
