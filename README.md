@@ -1,6 +1,5 @@
 ### CS572-Homework-08-LLM
-*Note: For all questions, UI is not required, test your code implementation from the CLI.*
-  
+ 
 Create an agent using TypeScript and the OpenAI Response API that manages a user’s todos with date awareness and completion tracking. Your agent should call functions automatically based on user input.
 
 Available Functions:
@@ -18,5 +17,6 @@ Requirements:
 * Handle invalid inputs gracefully.
 * Support multiple consecutive interactions without losing context.
   
+*Note: UI is not required, test your code implementation from the CLI.*
 
   
