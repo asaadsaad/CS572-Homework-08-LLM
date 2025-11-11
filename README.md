@@ -1,6 +1,6 @@
 ### CS572-Homework-08-LLM
  
-Create an agent using TypeScript and the OpenAI Response API that manages a user’s todos with date awareness and completion tracking. Your agent should call functions automatically based on user input.
+Create an AI workflow using TypeScript and the OpenAI Response API that manages a user’s todos with date awareness and completion tracking. Your workflow should call functions automatically based on user input.
 
 Available Functions:
 * `addTodo(dateInput: string, text: string): string` — Add a todo for a specific date (supports "today", "tomorrow", or "MM-DD-YYYY").
