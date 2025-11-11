@@ -1,22 +1,22 @@
 ### CS572-Homework-08-LLM
 *Note: For all questions, UI is not required, test your code implementation from the CLI.*
-#### Question 01
-Create a function and use the OpenAI API to convert a US address to a JSON object:
-* Input: `1000 N 4th Street, Fairfield, IA 52556`
-* Output: `{ "street": "1000 N 4th Street", "City": "Fairfield", "State": "IA", "Zipcode": "52556" }`
+  
+Create an agent using TypeScript and the OpenAI Response API that manages a user’s todos with date awareness and completion tracking. Your agent should call functions automatically based on user input.
 
-Note: You may install and use the [prompts](https://www.npmjs.com/package/prompts) package to read an input from the console.
+Available Functions:
+* `addTodo(dateInput: string, text: string): string` — Add a todo for a specific date (supports "today", "tomorrow", or "MM-DD-YYYY").
+* `getTodos(dateInput: string): string[]` — List all todos for a given date.
+* `removeTodo(text: string): string` — Remove a todo by exact text.
+* `completeTodo(text: string): string` — Mark a todo as completed.
+* `clearTodos(dateInput: string): string` — Remove all todos for a specific date.
 
-#### Question 02
-Create 5 RESTful API endpoints and use OpenAI API to implement the following:
-* Proofread any text
-* Make text Friendly
-* Make text Professional
-* Summarize text
-* Extract Key points
-
-#### Question 03
-Create an AI Agent that will assist students retrieve their final courses grade and GPA.
+Requirements:
+* Use in-memory storage to keep todos organized by date.
+* Detect user intent (add, list, remove, complete, clear) and call the appropriate function automatically.
+* Accept natural language dates ("today", "tomorrow") or explicit US format ("MM-DD-YYYY").
+* Provide clear responses for all actions (confirmation, errors, or list output).
+* Handle invalid inputs gracefully.
+* Support multiple consecutive interactions without losing context.
   
 
   
