@@ -1,6 +1,6 @@
 ### CS572-Homework-08-LLM
  
-Build an AI workflow using TypeScript and the OpenAI Response API that manages a user’s todos with date awareness and natural language date handling. Your workflow should automatically call functions based on user input.
+Build an AI Agent using TypeScript and the OpenAI Response API that manages a user’s todos with date awareness and natural language date handling. 
 Available Functions:
 * `addTodo(dateInput: string, text: string): string` Add a todo for a specific date (supports `"today"`, `"tomorrow"`, or `"MM-DD-YYYY"`).
 * `getTodos(dateInput: string): string[]` List all todos for a given date.
