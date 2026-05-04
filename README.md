@@ -1,4 +1,4 @@
-### CS572-Homework-08-LLM
+### CS572-Homework-LLM
  
 Build an AI Agent using TypeScript and the OpenAI Response API that manages a user’s todos with date awareness and natural language date handling. 
 Available Functions:
