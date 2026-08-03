@@ -1,46 +1,40 @@
-function normalizeDate(dateInput: string): string {
-  const today = new Date()
-  const lower = dateInput.trim().toLowerCase()
+interface Todo {
+  text: string;
+  priority: string;
+}
 
-  if (lower === "today") return formatDate(today)
+const todos: Todo[] = [];
 
-  if (lower === "tomorrow") {
-    const tomorrow = new Date(today)
-    tomorrow.setDate(today.getDate() + 1)
-    return formatDate(tomorrow)
+function addTodo(text: string, priority: string): string {
+  if (!text.trim()) {
+    return "Todo text cannot be empty.";
   }
 
-  if (/^\d{2}-\d{2}-\d{4}$/.test(lower)) return lower
+  todos.push({
+    text: text.trim(),
+    priority: priority.trim().toLowerCase(),
+  });
 
-  throw new Error("Invalid date format. Use 'today', 'tomorrow', or 'MM-DD-YYYY'.")
+  return `Added ${priority} priority todo: "${text}".`;
 }
 
-function formatDate(date: Date): string {
-  const mm = String(date.getMonth() + 1).padStart(2, "0")
-  const dd = String(date.getDate()).padStart(2, "0")
-  const yyyy = date.getFullYear()
-  return `${mm}-${dd}-${yyyy}`
-}
+function getTodos(priority?: string): string[] {
+  let result = todos;
 
-const todos: Record<string, string[]> = {}
-
-function addTodo(dateInput: string, text: string): string {
-  const date = normalizeDate(dateInput)
-  const todoText = text.trim()
-  if (!todoText) return "Todo text cannot be empty."
-
-  if (!todos[date]) todos[date] = []
-  todos[date].push(todoText)
-
-  return `Added todo for ${date}: "${todoText}".`
-}
-
-function getTodos(dateInput: string): string[] {
-  const date = normalizeDate(dateInput)
-  if (!todos[date] || todos[date].length === 0) {
-    return [`No todos found for ${date}.`]
+  if (priority) {
+    result = todos.filter(
+      todo => todo.priority === priority.toLowerCase()
+    );
   }
-  return todos[date].map((t, i) => `${i + 1}. ${t}`)
+
+  if (result.length === 0) {
+    return ["No todos found."];
+  }
+
+  return result.map(
+    (todo, index) =>
+      `${index + 1}. [${todo.priority}] ${todo.text}`
+  );
 }
 
-export { addTodo, getTodos, normalizeDate, formatDate }
+export { addTodo, getTodos };
